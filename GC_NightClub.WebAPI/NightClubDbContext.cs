@@ -1,12 +1,10 @@
-﻿using GC_NightClub.Domain;
+﻿using GC_NightClub.WebAPI.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace GC_NightClub.Data
+namespace GC_NightClub.WebAPI
 {
-    public class NightClubDbContext : DbContext
+    public class NightClubDbContext(DbContextOptions<NightClubDbContext> options) : DbContext(options)
     {
-        public NightClubDbContext(DbContextOptions<NightClubDbContext> options) : base(options) { }
-
         public DbSet<IdentityCard> IdentityCards { get; set; }
         public DbSet<MemberCard> MemberCards { get; set; }
 

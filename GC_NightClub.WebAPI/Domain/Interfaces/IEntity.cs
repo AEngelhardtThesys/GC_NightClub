@@ -1,4 +1,4 @@
-﻿namespace GC_NightClub.Domain.Interfaces
+﻿namespace GC_NightClub.WebAPI.Domain.Interfaces
 {
     public interface IEntity<TKey>
     {

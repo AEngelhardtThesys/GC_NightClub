@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GC_NightClub.Domain.Attributes
+namespace GC_NightClub.WebAPI.Domain.Attributes
 {
     public class PastDateAttribute(string propertyLabel = "Date") : ValidationAttribute
     {
@@ -11,7 +11,7 @@ namespace GC_NightClub.Domain.Attributes
 
             return date >= DateTime.Today
                 ? new ValidationResult($"{propertyLabel} \"{date:dd/MM/yyyy}\" should be lower than current date.")
-                : base.IsValid(value, validationContext);
+                : null;
         }
     }
 }
